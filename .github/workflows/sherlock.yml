@@ -34,7 +34,7 @@ jobs:
         run: |
           mkdir -p results
           sherlock $TARGETS --print-found --no-color \
-            --output results/sherlock.txt
+            --output results/
 
       - name: 上传结果
         uses: actions/upload-artifact@v4
