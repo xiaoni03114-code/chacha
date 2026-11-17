@@ -33,8 +33,7 @@ jobs:
           TARGETS: ${{ github.event.inputs.username || 'xiaoni03114-code' }}
         run: |
           mkdir -p results
-          sherlock $TARGETS --print-found --no-color \
-            --output results/
+          sherlock $TARGETS --print-found --no-color 2>&1 | tee results/result.txt
 
       - name: 上传结果
         uses: actions/upload-artifact@v4
